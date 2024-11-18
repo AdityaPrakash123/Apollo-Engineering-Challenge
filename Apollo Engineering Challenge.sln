@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApolloEngineeringChallenge", "ApolloEngineeringChallenge.csproj", "{670F9C2C-280D-468D-89A6-5F9957E95494}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApolloEngineeringChallenge.Tests", "..\ApolloEngineeringChallenge.Tests\ApolloEngineeringChallenge.Tests.csproj", "{7F962FAD-A47C-41E3-BEB2-1A723FCC59A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{670F9C2C-280D-468D-89A6-5F9957E95494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670F9C2C-280D-468D-89A6-5F9957E95494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670F9C2C-280D-468D-89A6-5F9957E95494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670F9C2C-280D-468D-89A6-5F9957E95494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F962FAD-A47C-41E3-BEB2-1A723FCC59A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F962FAD-A47C-41E3-BEB2-1A723FCC59A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F962FAD-A47C-41E3-BEB2-1A723FCC59A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F962FAD-A47C-41E3-BEB2-1A723FCC59A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9CCBD04-18E1-4EED-B2FB-411801B1B2DE}
+	EndGlobalSection
+EndGlobal
