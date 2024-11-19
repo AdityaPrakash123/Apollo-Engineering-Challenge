@@ -10,8 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<VehicleContext>(options => {
-    options.UseSqlServer("Server=.;Database=VehicleDB;Trusted_Connection=True;TrustServerCertificate=True"); 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
 
 
 
