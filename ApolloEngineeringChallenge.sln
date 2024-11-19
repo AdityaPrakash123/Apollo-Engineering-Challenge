@@ -5,8 +5,7 @@ VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApolloEngineeringChallenge", "ApolloEngineeringChallenge\ApolloEngineeringChallenge.csproj", "{670F9C2C-280D-468D-89A6-5F9957E95494}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApolloEngineeringChallenge.Tests", "ApolloEngineeringChallenge.Tests\ApolloEngineeringChallenge.Tests.csproj", "{7F962FAD-A47C-41E3-BEB2-1A723FCC59A2}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
