@@ -26,8 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Apollo Engineering Challenge\ApolloEngineeringChallenge.csproj" />
-    <ProjectReference Include="..\..\..\OneDrive\Desktop\Apollo-Engineering-Challenge\ApolloEngineeringChallenge.csproj" />
+    <!-- Update the relative path to match your directory structure -->
+    <ProjectReference Include="..\ApolloEngineeringChallenge\ApolloEngineeringChallenge.csproj" />
   </ItemGroup>
 
 </Project>
