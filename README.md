@@ -52,48 +52,102 @@ This project implements a web service with CRUD-style API access to a vehicle da
 
 # Installation and Build Instructions
 **1) CD into the Project Directory**
-* cd /path/to/your/project
-
+      
+      cd /path/to/your/project
+      
 **2) Install Dependencies: Run the following command to install required dependencies:**
-   * dotnet restore
+      
+      dotnet restore
+
 **3) Build the Project:**
-   * dotnet build
+      
+      dotnet build
+
 **4) Run the Application:**
-   * dotnet run
+      
+      dotnet run
+
 **5) Run the tests:**
-   * dotnet test
+      
+      dotnet test
 
 
 # GET all vehicles
-**Localhost:** curl http://localhost:5196/vehicle
+**Localhost:** 
 
-**Azure:** curl https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle
+      curl http://localhost:5196/vehicle
+
+**Azure:** 
+
+      curl https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle
 
 # POST to Create a vehicle
-**Localhost:** curl -X POST http://localhost:5196/vehicle -H "Content-Type: application/json" -d '{"ManufacturerName": "Toyota", "Description": "Compact sedan", "HorsePower": "130", "ModelName": "Corolla", "ModelYear": 2021, "PurchasePrice": 20000, "FuelType": "Petrol"}'
+**Localhost:** 
+
+      Invoke-RestMethod -Uri "http://localhost:5196/vehicle" -Method Post -Headers @{ "Content-Type" = "application/json" } -Body '{
+        "VIN": "1HGBH41JXMN109187",
+        "ManufacturerName": "Toyota",
+        "Description": "Compact sedan",
+        "HorsePower": "150",
+        "ModelName": "Corolla",
+        "ModelYear": 2021,
+        "PurchasePrice": 25000,
+        "FuelType": "Petrol"
+      }'
 
 
-**Azure:** curl -X POST https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle -H "Content-Type: application/json" -d '{"ManufacturerName": "Toyota", "Description": "Compact sedan", "HorsePower": "130", "ModelName": "Corolla", "ModelYear": 2021, "PurchasePrice": 20000, "FuelType": "Petrol"}'
+**Azure:** 
 
+      Invoke-RestMethod -Uri "https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle" -Method Post -Headers @{ "Content-Type" = "application/json" } -Body '{ "VIN": "1HGBH41JXMN109187", "ManufacturerName": "Toyota", "Description": "Compact sedan", "HorsePower": "150", "ModelName": "Corolla", "ModelYear": 2021, "PurchasePrice": 25000, "FuelType": "Petrol" }'
 
 # GET a Vehicle by VIN:
 
-**Localhost:** curl http://localhost:5196/vehicle/VIN
+**Localhost:** 
 
-**Azure:** curl https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle/VIN
+      curl http://localhost:5196/vehicle/VIN
+
+**Azure:** 
+      curl https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle/VIN
 
 
 # PUT to a Vehicle by VIN:
 
-**Localhost:** curl -X PUT http://localhost:5196/vehicle/VIN -H "Content-Type: application/json" -d '{"ManufacturerName": "Toyota Updated", "Description": "Updated sedan", "HorsePower": "140", "ModelName": "Corolla Updated", "ModelYear": 2022, "PurchasePrice": 21000, "FuelType": "Hybrid"}'
+**Localhost:** 
+
+      Invoke-RestMethod -Uri "http://localhost:5196/vehicle/VIN" -Method Put -Headers @{ "Content-Type" = "application/json" } -Body '{
+        "ManufacturerName": "Toyota Updated",
+        "Description": "Updated sedan",
+        "HorsePower": "150",
+        "ModelName": "Corolla Updated",
+        "ModelYear": 2022,
+        "PurchasePrice": 26000,
+        "FuelType": "Hybrid"
+      }'
 
 
-**Azure:** curl -X PUT https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle/1HGBH41JXMN109186 -H "Content-Type: application/json" -d '{"ManufacturerName": "Toyota Updated", "Description": "Updated sedan", "HorsePower": "140", "ModelName": "Corolla Updated", "ModelYear": 2022, "PurchasePrice": 21000, "FuelType": "Hybrid"}'
+
+**Azure:** 
+
+      Invoke-RestMethod -Uri "https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle/VIN" -Method Put -Headers @{ "Content-Type" = "application/json" } -Body '{
+        "ManufacturerName": "Toyota Updated",
+        "Description": "Updated sedan",
+        "HorsePower": "150",
+        "ModelName": "Corolla Updated",
+        "ModelYear": 2022,
+        "PurchasePrice": 26000,
+        "FuelType": "Hybrid"
+      }'
+
+
 
 # DELETE a Vehicle by VIN:
 
-**Localhost:** curl http://localhost:5196/vehicle/VIN
+**Localhost:** 
 
-**Azure:** curl -X DELETE https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle/VIN
+      Invoke-WebRequest -Uri "http://localhost:5196/vehicle/VIN" -Method DELETE
+
+**Azure:** 
+      
+      Invoke-WebRequest -Uri "https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle/VIN" -Method DELETE
 
 
