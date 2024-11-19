@@ -261,5 +261,12 @@ namespace ApolloEngineeringChallenge.Tests
             Assert.NotNull(response);
             Assert.False(response.Success);
         }
+
+
+        // Have an in memory database
+        // Have the two tables
+        // Add sample data for both
+        // Check if returning non null value
+        // Check if it is returning status code ok
     }
 }

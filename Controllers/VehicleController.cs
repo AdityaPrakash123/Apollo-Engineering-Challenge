@@ -2,7 +2,9 @@
 using ApolloEngineeringChallenge.Models;
 using ApolloEngineeringChallenge.Utils;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Reflection.Metadata;
 
 namespace ApolloEngineeringChallenge.Controllers
 {
@@ -50,7 +52,9 @@ namespace ApolloEngineeringChallenge.Controllers
                 ModelName = vehicleDTO.ModelName,
                 ModelYear = vehicleDTO.ModelYear,
                 PurchasePrice = vehicleDTO.PurchasePrice,
-                FuelType = vehicleDTO.FuelType ?? "Petrol"
+                FuelType = vehicleDTO.FuelType ?? "Petrol",
+                Color = vehicleDTO.Color,
+                Category = vehicleDTO.Category
             };
 
             _vehicleContext.Vehicles.Add(vehicle);
@@ -142,6 +146,33 @@ namespace ApolloEngineeringChallenge.Controllers
 
             response = new APIResponse(true, "Vehicle deleted successfully.");
             return NoContent();
+        }
+
+        [HttpGet]
+        [Route("vehicle/sold")]
+        public IActionResult GetSoldVehicles(string? make, string? color) {
+
+            // Vehicle db is called [dbo].[Vehicle]
+            // Sold db is called [dbo].[VehicleSold]
+            string query = $"SELECT * FROM [dbo].[Vehicle] as a INNER JOIN [dbo].[VehiclesSold] as b ON a.VIN = b.VINId;";
+
+            if (make != null && color != null) {
+                query = query  + $"WHERE make = '{make}' AND color = '{color}';";
+            }else if(make != null)
+            {
+                query = query + $"WHERE make = '{make}';";
+            }else if (color != null)
+            {
+                query = query + $"color = '{color}'";
+            }
+
+
+            
+
+            var vehicles = _vehicleContext.Vehicles.FromSqlRaw(query);
+
+
+            return Ok(vehicles);
         }
     }
 }

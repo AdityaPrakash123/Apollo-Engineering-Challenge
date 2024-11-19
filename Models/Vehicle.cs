@@ -20,5 +20,12 @@ namespace ApolloEngineeringChallenge.Models
         public double PurchasePrice { get; set; }
         [Required]
         public string FuelType { get; set; }
+        [Required]
+
+        public string Color { get; set; }
+
+        [Required]
+        public string Category { get; set; }
+        
     }
 }

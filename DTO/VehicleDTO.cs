@@ -10,5 +10,7 @@
         public int ModelYear { get; set; }
         public double PurchasePrice { get; set; }
         public string FuelType { get; set; }
+        public string Color { get; set; }
+        public string Category { get; set; }
     }
 }
