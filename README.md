@@ -47,17 +47,6 @@ This project implements a web service with CRUD-style API access to a vehicle da
    * dotnet run
 4) dotnet test
 
-# Add Migrations
-
-* dotnet ef migrations add Initial-Migrations
-
-# Apply the Migration
-
-* dotnet ef database update
-
-
-
-
 curl http://localhost:5196/vehicle
 
 curl -X POST http://localhost:5196/vehicle -H "Content-Type: application/json" -d '{
