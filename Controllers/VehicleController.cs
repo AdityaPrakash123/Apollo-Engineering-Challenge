@@ -8,6 +8,7 @@ namespace ApolloEngineeringChallenge.Controllers
 {
     [ApiController]
     [Route("/")]
+    // Controller
     public class VehicleController : ControllerBase // Changed to ControllerBase for API controllers
     {
         private readonly VehicleContext _vehicleContext;
