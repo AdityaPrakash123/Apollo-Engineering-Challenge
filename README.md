@@ -50,6 +50,15 @@ This project implements a web service with CRUD-style API access to a vehicle da
 * 400 Bad Request: Returned when the server cannot parse the JSON input.
 * 422 Unprocessable Entity: Returned when the JSON input is valid but fails validation due to malformed or null attributes.
 
+# Install .NET
+**1) Install .NET 7**
+      
+      brew link --force --overwrite dotnet-sdk@7
+
+**2) Check if .NET has been installed**     
+
+      dotnet --version
+
 # Installation and Build Instructions
 **1) CD into the Project Directory**
       
