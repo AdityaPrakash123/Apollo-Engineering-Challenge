@@ -141,7 +141,7 @@ namespace ApolloEngineeringChallenge.Controllers
             _vehicleContext.SaveChanges();
 
             response = new APIResponse(true, "Vehicle deleted successfully.");
-            return Ok(response);
+            return NoContent();
         }
     }
 }
