@@ -93,7 +93,23 @@ This project implements a web service with CRUD-style API access to a vehicle da
 # POST to Create a vehicle
 **Localhost:** 
 
-      Invoke-RestMethod -Uri "http://localhost:5196/vehicle" -Method Post -Headers @{ "Content-Type" = "application/json" } -Body '{
+      curl -X POST http://localhost:5196/vehicle -H "Content-Type: application/json" -d '{
+        "ManufacturerName": "Toyota",
+        "Description": "Compact sedan",
+        "HorsePower": "130",
+        "ModelName": "Corolla",
+        "ModelYear": 2021,
+        "PurchasePrice": 20000,
+        "FuelType": "Petrol"
+      }'
+
+
+
+**Azure:** 
+
+      curl -X POST https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle \
+      -H "Content-Type: application/json" \
+      -d '{
         "VIN": "1HGBH41JXMN109187",
         "ManufacturerName": "Toyota",
         "Description": "Compact sedan",
@@ -104,11 +120,6 @@ This project implements a web service with CRUD-style API access to a vehicle da
         "FuelType": "Petrol"
       }'
 
-
-**Azure:** 
-
-      Invoke-RestMethod -Uri "https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle" -Method Post -Headers @{ "Content-Type" = "application/json" } -Body '{ "VIN": "1HGBH41JXMN109187", "ManufacturerName": "Toyota", "Description": "Compact sedan", "HorsePower": "150", "ModelName": "Corolla", "ModelYear": 2021, "PurchasePrice": 25000, "FuelType": "Petrol" }'
-
 # GET a Vehicle by VIN:
 
 **Localhost:** 
@@ -116,6 +127,7 @@ This project implements a web service with CRUD-style API access to a vehicle da
       curl http://localhost:5196/vehicle/VIN
 
 **Azure:** 
+      
       curl https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle/VIN
 
 
@@ -123,7 +135,9 @@ This project implements a web service with CRUD-style API access to a vehicle da
 
 **Localhost:** 
 
-      Invoke-RestMethod -Uri "http://localhost:5196/vehicle/VIN" -Method Put -Headers @{ "Content-Type" = "application/json" } -Body '{
+      curl -X PUT http://localhost:5196/vehicle/VIN \
+      -H "Content-Type: application/json" \
+      -d '{
         "ManufacturerName": "Toyota Updated",
         "Description": "Updated sedan",
         "HorsePower": "150",
@@ -132,12 +146,15 @@ This project implements a web service with CRUD-style API access to a vehicle da
         "PurchasePrice": 26000,
         "FuelType": "Hybrid"
       }'
+
 
 
 
 **Azure:** 
 
-      Invoke-RestMethod -Uri "https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle/VIN" -Method Put -Headers @{ "Content-Type" = "application/json" } -Body '{
+      curl -X PUT https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle/VIN \
+      -H "Content-Type: application/json" \
+      -d '{
         "ManufacturerName": "Toyota Updated",
         "Description": "Updated sedan",
         "HorsePower": "150",
@@ -146,6 +163,7 @@ This project implements a web service with CRUD-style API access to a vehicle da
         "PurchasePrice": 26000,
         "FuelType": "Hybrid"
       }'
+
 
 
 
@@ -153,10 +171,10 @@ This project implements a web service with CRUD-style API access to a vehicle da
 
 **Localhost:** 
 
-      Invoke-WebRequest -Uri "http://localhost:5196/vehicle/VIN" -Method DELETE
+      curl -X DELETE http://localhost:5196/vehicle/VIN
 
 **Azure:** 
       
-      Invoke-WebRequest -Uri "https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle/VIN" -Method DELETE
+      curl -X DELETE https://apolloengineeringchallenge-facpatbjdxgdb4dz.canadacentral-01.azurewebsites.net/vehicle/VIN
 
-
+      
